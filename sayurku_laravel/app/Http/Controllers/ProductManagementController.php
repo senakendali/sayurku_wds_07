@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Navigation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -16,22 +17,24 @@ class ProductManagementController extends Controller
     public function index(){
         return view($this->view_directory.'index',
             [
+                'navigations' => Navigation::where('category', 'admin')->where('status', 'show')->get(),
                 'page_title' => $this->page_title,
                 'current_page' => $this->url,
                 'data' => Product::all(),
                 'javascript_file' =>'',
             ]
-            );
+        );
     }
 
     public function create(){
         return view($this->view_directory.'create',
             [
+                'navigations' => Navigation::where('category', 'admin')->where('status', 'show')->get(),
                 'page_title' => $this->page_title,
                 'current_page' => $this->url,
                 'javascript_file' =>'admin/product/create.js',
             ]
-            );
+        );
     }
 
     public function store(Request $request){
@@ -72,6 +75,7 @@ class ProductManagementController extends Controller
     public function edit($id){
         return view($this->view_directory.'edit',
             [
+                'navigations' => Navigation::where('category', 'admin')->where('status', 'show')->get(),
                 'page_title' => $this->page_title,
                 'current_page' => $this->url,
                 'detail' => Product::find($id),
