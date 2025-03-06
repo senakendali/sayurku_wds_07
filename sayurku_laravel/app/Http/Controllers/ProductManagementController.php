@@ -20,7 +20,7 @@ class ProductManagementController extends Controller
                 'navigations' => Navigation::where('category', 'admin')->where('status', 'show')->get(),
                 'page_title' => $this->page_title,
                 'current_page' => $this->url,
-                'data' => Product::all(),
+                'data' => Product::paginate(10),
                 'javascript_file' =>'',
             ]
         );
