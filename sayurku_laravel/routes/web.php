@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\NavigationController;
+use App\Http\Controllers\UserManagementController;
 
 Route::get('/', [PageController::class, 'index']);
 Route::get('/about', [PageController::class, 'about']);
@@ -40,3 +41,11 @@ Route::post('/navigation-management/store',[NavigationController::class,'store']
 Route::get('/navigation-management/edit/{id}', [NavigationController::class, 'edit'])->middleware('CheckAuth');
 Route::post('/navigation-management/update',[NavigationController::class,'update']);
 Route::get('/navigation-management/delete/{id}', [NavigationController::class, 'destroy']);
+
+//User Management
+Route::get('/user-management', [UserManagementController::class, 'index'])->middleware('CheckAuth');
+Route::get('/user-management/create', [UserManagementController::class, 'create'])->middleware('CheckAuth');
+Route::post('/user-management/store',[UserManagementController::class,'store']);
+Route::get('/user-management/edit/{id}', [UserManagementController::class, 'edit'])->middleware('CheckAuth');
+Route::post('/user-management/update',[UserManagementController::class,'update']);
+Route::get('/user-management/delete/{id}', [UserManagementController::class, 'destroy']);
