@@ -23,9 +23,9 @@
                 </div>
                 <div class="col-lg-10">
                   <div class="d-flex justify-content-end">
-                    <form action="" method="get" class="search">
-                      <input type="text" name="search" id="search" placeholder="Cari di sayurku">
-                  </form>
+                    <form action="{{ route('cari') }}" method="get" class="search">
+                      <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Cari di sayurku">
+                    </form>
                   </div>
                 </div>
             </div>
@@ -41,9 +41,15 @@
                 
                 @if($navigations)
                   @foreach($navigations as $navigation)
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="{{ url($navigation->slug) }}">{{ $navigation->name }}</a>
-                    </li>
+                    @if($navigation->slug != 'home')
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url($navigation->slug) }}">{{ $navigation->name }}</a>
+                      </li>
+                    @else
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url('/') }}">{{ $navigation->name }}</a>
+                      </li>
+                    @endif
                   @endforeach
                 @endif
                 
@@ -96,6 +102,7 @@
     </footer>
     @endif
     <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     @if($javascript_file)
     <script src="{{ asset('js/'.$javascript_file) }}"></script>

@@ -89,6 +89,45 @@ p{
     /*padding-top: 20px;*/
 }
 
+.page-title{
+    background-color: #FFFFFF;
+    height:150px;
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+}
+
+.page-title p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.page-content{
+    padding-top: 20px;
+}
+
+.page-title h1{
+    font-family: "Roboto", serif;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/*.content h2{
+    padding-top:20px;
+    padding-bottom:20px;
+}*/
+
+.content .page-content h2{
+    font-family: "Roboto", serif;
+    text-align: left;
+    font-size: 18px;
+}
+
+.content .page-content p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
 .content h1{
     font-family: "Roboto", serif;
 }
@@ -213,4 +252,12 @@ input[type=submit]:hover{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     margin: 0px 0px 8px;
+}
+
+.tox .tox-promotion {
+    display: none !important;
+}
+
+.tox .tox-statusbar__right-container {
+    display: none !important;
 }

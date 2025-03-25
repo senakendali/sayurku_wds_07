@@ -31,25 +31,25 @@
         </section>
         <section class="products">
             <div class="container-xxl">
-                <h2>Produk Kami</h2>
+                <h2 class="mt-4 mb-4">Produk Kami</h2>
                 
-            <div class="galleries">
-              @foreach ($products as $product)
-                <div class="item">
-                    <a href="">
-                        <img src="{{ asset($product->product_image) }}" alt="{{ $product->product_name }}">
-                    </a>
-                    <div class="product-name">{{ $product->product_name }}</div>
-                    <div class="product-description">
-                        {{ $product->product_description }}
-                    </div>
-                </div>
-              @endforeach
-            </div>
+                  <div class="galleries">
+                    @foreach ($products as $product)
+                      <div class="item">
+                          <a href="">
+                              <img src="{{ asset($product->product_image) }}" alt="{{ $product->product_name }}">
+                          </a>
+                          <div class="product-name">{{ $product->product_name }}</div>
+                          <div class="product-description">
+                              {{ $product->product_description }}
+                          </div>
+                      </div>
+                    @endforeach
+                  </div>
         </section>
         <section class="blog">
           <div class="container-xxl">
-            <h2>Blog</h2>
+            <h2 class="mt-4 mb-4">Blog</h2>
             <div class="row" data-masonry='{"percentPosition": true }'>
               <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
@@ -137,7 +137,7 @@
         </section>
         <section class="order">
             <div class="container">
-                <h2>Pesan Sayuran</h2>
+                <h2 class="mt-4 mb-4">Pesan Sayuran</h2>
                 <form id="order-form" class="order-form" >
                     <p>
                         Silahkan isi form dibawah ini untuk melakukan pemesanan. 
